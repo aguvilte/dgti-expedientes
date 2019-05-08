@@ -2,13 +2,13 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 
-$this->title = 'SRA - Sistema de Registración de Ayudas';
+$this->title = 'SSE- Sistema de Seguimiento de Expedientes';
 
 ?>
 <div class="site-index">
 
     <div class="_jumbotron">
-       <h2 class="titulo-area">Sistema de Registración de Ayudas Economicas</h2>
+       <h2 class="titulo-area">Sistema de Seguimiento de Expedientes</h2>
        <hr>
     </div>
 
