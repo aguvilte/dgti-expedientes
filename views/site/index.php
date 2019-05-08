@@ -19,7 +19,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                 echo '
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                        <h2 class="titulo-seccion">Área de Carga de Ayudas</h2>
+                        <h2 class="titulo-seccion">ROL 1 (nombre del area al q pertenece el usuario?)</h2>
                   </div>
                   <div class="panel-body">';
 
@@ -100,7 +100,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                 echo '
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                        <h2 class="titulo-seccion">Área de Pago de Ayudas</h2>
+                        <h2 class="titulo-seccion">Contaduría</h2>
                   </div>
                   <div class="panel-body">';
 
