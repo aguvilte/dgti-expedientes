@@ -18,7 +18,8 @@ class CodigosAreasSearch extends CodigosAreas
     public function rules()
     {
         return [
-            [['id_codigo_area', 'id_codigo', 'id_area', 'estado'], 'integer'],
+            [['id_codigo_area', 'id_codigo', 'id_area', 'estado', 'id_resolucion_asignacion', 'id_resolucion_liberación'], 'integer'],
+            [['fecha_registro'], 'safe'],
         ];
     }
 
@@ -62,6 +63,9 @@ class CodigosAreasSearch extends CodigosAreas
             'id_codigo' => $this->id_codigo,
             'id_area' => $this->id_area,
             'estado' => $this->estado,
+            'fecha_registro' => $this->fecha_registro,
+            'id_resolucion_asignacion' => $this->id_resolucion_asignacion,
+            'id_resolucion_liberación' => $this->id_resolucion_liberación,
         ]);
 
         return $dataProvider;

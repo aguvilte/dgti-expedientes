@@ -23,6 +23,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'estado') ?>
 
+    <?= $form->field($model, 'fecha_registro') ?>
+
+    <?php // echo $form->field($model, 'id_resolucion_asignacion') ?>
+
+    <?php // echo $form->field($model, 'id_resolucion_liberación') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

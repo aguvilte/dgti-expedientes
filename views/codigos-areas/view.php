@@ -32,6 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_codigo',
             'id_area',
             'estado',
+            'fecha_registro',
+            'id_resolucion_asignacion',
+            'id_resolucion_liberación',
         ],
     ]) ?>
 

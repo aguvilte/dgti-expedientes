@@ -18,7 +18,7 @@ class CodigosSearch extends Codigos
     public function rules()
     {
         return [
-            [['id_codigo', 'estado', 'id_resolucion'], 'integer'],
+            [['id_codigo', 'estado'], 'integer'],
             [['codigo'], 'safe'],
         ];
     }
@@ -61,7 +61,6 @@ class CodigosSearch extends Codigos
         $query->andFilterWhere([
             'id_codigo' => $this->id_codigo,
             'estado' => $this->estado,
-            'id_resolucion' => $this->id_resolucion,
         ]);
 
         $query->andFilterWhere(['like', 'codigo', $this->codigo]);

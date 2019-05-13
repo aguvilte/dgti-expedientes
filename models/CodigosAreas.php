@@ -11,6 +11,9 @@ use Yii;
  * @property integer $id_codigo
  * @property integer $id_area
  * @property integer $estado
+ * @property string $fecha_registro
+ * @property integer $id_resolucion_asignacion
+ * @property integer $id_resolucion_liberaci贸n
  */
 class CodigosAreas extends \yii\db\ActiveRecord
 {
@@ -28,8 +31,9 @@ class CodigosAreas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_codigo', 'id_area', 'estado'], 'required'],
-            [['id_codigo', 'id_area', 'estado'], 'integer'],
+            [['id_codigo', 'id_area', 'estado', 'id_resolucion_asignacion', 'id_resolucion_liberaci贸n'], 'required'],
+            [['id_codigo', 'id_area', 'estado', 'id_resolucion_asignacion', 'id_resolucion_liberaci贸n'], 'integer'],
+            [['fecha_registro'], 'safe'],
         ];
     }
 
@@ -43,6 +47,9 @@ class CodigosAreas extends \yii\db\ActiveRecord
             'id_codigo' => 'Id Codigo',
             'id_area' => 'Id Area',
             'estado' => 'Estado',
+            'fecha_registro' => 'Fecha Registro',
+            'id_resolucion_asignacion' => 'Id Resolucion Asignacion',
+            'id_resolucion_liberaci贸n' => 'Id Resolucion Liberaci愠n',
         ];
     }
 }
