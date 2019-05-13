@@ -29,7 +29,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_beneficiarios.png') . Yii::t('app','AREAS'), ['/beneficiarios/index']);
+                      echo Html::a(Html::img('@web/img/ico_beneficiarios.png') . Yii::t('app','AREAS'), ['/areas/index']);
                     echo '
                      </div>
                     </article>';
@@ -38,7 +38,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CODIGOS'), ['/ayudas/filters']);
+                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CODIGOS'), ['/codigos/index']);
                     echo '
                      </div>
                     </article>';
@@ -47,7 +47,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RESOLUCIONES'), ['/fecha-pago/fecha_pago']);
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RESOLUCIONES'), ['/resoluciones/index']);
                     echo '
                      </div>
                     </article>';
@@ -56,6 +56,41 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
 
               } 
               echo '</div>';?>
+              <?php
+                echo '<div class="panel-body">';
+
+                foreach ($UsuariosSecciones as $UsuariosSeccion) {
+
+                  if ($UsuariosSeccion->id_seccion==13) {
+                    echo '
+                    <article class="grid col-one-quarter mq3-col-full">
+                     <div class="ipanel_icon ">';
+                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CARGA Y ENVIO'), ['/expedientes/index']);
+                    echo '
+                     </div>
+                    </article>';
+                  }
+                  if ($UsuariosSeccion->id_seccion==14) {
+                    echo '
+                    <article class="grid col-one-quarter mq3-col-full">
+                     <div class="ipanel_icon ">';
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECIBIR'), ['/expedientes/recibir']);
+                    echo '
+                     </div>
+                    </article>';
+                  }
+                  if ($UsuariosSeccion->id_seccion==15) {
+                    echo '
+                    <article class="grid col-one-quarter mq3-col-full">
+                     <div class="ipanel_icon ">';
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECORRIDO'), ['/recorridos-expedientes/index']);
+                    echo '
+                     </div>
+                    </article>';
+                  }
+                }
+              echo '</div>';
+            ?>
 
           </div>
         <div>
@@ -74,7 +109,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_beneficiarios.png') . Yii::t('app','CONSULTA CODIGO'), ['/beneficiarios/index']);
+                      echo Html::a(Html::img('@web/img/ico_beneficiarios.png') . Yii::t('app','CONSULTA CODIGO'), ['/areas/index']);
                     echo '
                      </div>
                     </article>';
@@ -83,7 +118,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CARGA Y ENVIO'), ['/ayudas/filters']);
+                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CARGA Y ENVIO'), ['/expedientes/index']);
                     echo '
                      </div>
                     </article>';
@@ -92,7 +127,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECIBIR'), ['/fecha-pago/fecha_pago']);
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECIBIR'), ['/expedientes/recibir']);
                     echo '
                      </div>
                     </article>';
@@ -101,7 +136,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECORRIDO'), ['/fecha-pago/fecha_pago']);
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECORRIDO'), ['/recorridos-expedientes/index']);
                     echo '
                      </div>
                     </article>';
@@ -117,7 +152,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                 echo '
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                        <h2 class="titulo-seccion">CONTADURÍA</h2>
+                        <h2 class="titulo-seccion">Contaduría</h2>
                   </div>
                   <div class="panel-body">';
 
@@ -127,7 +162,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_beneficiarios.png') . Yii::t('app','CONSULTA CODIGO'), ['/beneficiarios/index']);
+                      echo Html::a(Html::img('@web/img/ico_beneficiarios.png') . Yii::t('app','CONSULTA CODIGO'), ['/areas/index']);
                     echo '
                      </div>
                     </article>';
@@ -136,7 +171,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CARGA Y ENVIO'), ['/ayudas/filters']);
+                      echo Html::a(Html::img('@web/img/ico_consulta.png') . Yii::t('app','CARGA Y ENVIO'), ['/expedientes/index']);
                     echo '
                      </div>
                     </article>';
@@ -145,7 +180,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECIBIR'), ['/fecha-pago/fecha_pago']);
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECIBIR'), ['/expedientes/recibir']);
                     echo '
                      </div>
                     </article>';
@@ -154,16 +189,7 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                     echo '
                     <article class="grid col-one-quarter mq3-col-full">
                      <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECORRIDO'), ['/fecha-pago/fecha_pago']);
-                    echo '
-                     </div>
-                    </article>';
-                  }
-                  if ($UsuariosSeccion->id_seccion==12) {
-                    echo '
-                    <article class="grid col-one-quarter mq3-col-full">
-                     <div class="ipanel_icon ">';
-                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','ORDENES DE PAGO'), ['/fecha-pago/fecha_pago']);
+                      echo Html::a(Html::img('@web/img/ico_historial.png') . Yii::t('app','RECORRIDO'), ['/recorridos-expedientes/index']);
                     echo '
                      </div>
                     </article>';
@@ -171,7 +197,25 @@ $this->title = 'SSE - Sistema de Seguimiento de Expedientes';
                 }
               echo '</div>';
               
-              } ?> 
+              } ?>
+              <?php
+                echo '<div class="panel-body">';
+
+                foreach ($UsuariosSecciones as $UsuariosSeccion) {
+                    if ($UsuariosSeccion->id_seccion == 12) {
+                        echo '
+                            <article class="grid col-one-quarter mq3-col-full">
+                                <div class="ipanel_icon ">
+                        ';
+                        echo Html::a(Html::img('@web/img/ico_movimientos.png') . Yii::t('app','ORDENES DE PAGOS'), ['/ordenes-pagos/index']);
+                        echo '
+                                </div>
+                            </article>
+                        ';
+                    }
+                }
+                echo '</div>';
+            ?> 
             </div>
                             <!--
                             <article class="grid col-one-quarter mq3-col-full">

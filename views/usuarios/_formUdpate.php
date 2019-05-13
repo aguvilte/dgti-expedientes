@@ -30,7 +30,7 @@ foreach($secciones as $seccion) {
 } 
 $resultado1 = array_diff($array1, $array2);
 
-/*CONTADURIA*/
+/*AREAS*/
 $array3 = array();
 foreach($secciones as $seccion) {
   if($seccion->id_rol==3){  
@@ -39,6 +39,16 @@ foreach($secciones as $seccion) {
     }
 } 
 $resultado2 = array_diff($array3, $array2);
+
+/*CONTADURIA*/
+$array4 = array();
+foreach($secciones as $seccion) {
+  if($seccion->id_rol==4){  
+    $i=$i+1;
+    $array4[$i] = $seccion->id_seccion; 
+    }
+}
+$resultado3 = array_diff($array4, $array3);
 
 ?>
 
@@ -110,6 +120,29 @@ $resultado2 = array_diff($array3, $array2);
         ?>
     </div>
 
+    <div  class="form-group" id="div3" style="display:none;">
+      <label class="control-label">Secciones</label>
+        <?php 
+        foreach($UsuariosSecciones as $UsuariosSeccion) {   
+            foreach($secciones as $seccion) {
+                if($seccion->id_rol==4){  
+                    if($seccion->id_seccion==$UsuariosSeccion->id_seccion){
+                         echo '<p class="auto-style3"><input checked name="id_seccion[]" type="checkbox" value="'. $seccion->id_seccion.'"/>'.$seccion->nombre.'</p> '; 
+                    }
+                }    
+            }              
+        }
+         
+        foreach($resultado3 as $resultados) {   
+            foreach($secciones as $seccion) {
+                if($seccion->id_seccion==$resultados){
+                     echo '<p class="auto-style3"><input name="id_seccion[]" type="checkbox" value="'. $seccion->id_seccion.'"/>'.$seccion->nombre.'</p> '; 
+                }
+            }              
+        } 
+        ?>
+    </div>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
@@ -127,12 +160,19 @@ $(document).ready(function() {
         if(valor =="2"){
             $("#div1").show();
             $("#div2").hide();
+            $("#div3").hide();
         } else if (valor == "3") {
             $("#div1").hide();
             $("#div2").show();
+            $("#div3").hide();
+        } else if (valor == "4") {
+            $("#div1").hide();
+            $("#div2").hide();
+            $("#div3").show();
         } else {
           $("#div1").hide();
           $("#div2").hide();
+          $("#div3").hide();
         }
     });
 });
